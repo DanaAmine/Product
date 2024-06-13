@@ -1,4 +1,4 @@
-const Product = require('../models/product');
+const Product = require("../models/product");
 
 // Get all products (for home page)
 const getAllProducts_home = async (req, res) => {
@@ -9,6 +9,10 @@ const getAllProducts_home = async (req, res) => {
         console.error(err);
         res.status(500).send("Error retrieving products");
     }
+};
+
+const renderAbout = (req, res) => {
+    res.render("about");
 };
 
 const getAllProducts_create = async (req, res) => {
@@ -40,4 +44,5 @@ module.exports = {
     getAllProducts_home,
     getAllProducts_create,
     createProduct,
+    renderAbout,
 };
