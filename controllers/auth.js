@@ -28,6 +28,7 @@ const register = async (req, res) => {
             maxAge: 1000 * 60 * 60 * 24 * 30, //!30 days
         });
         //!send response
+
         res.status(201).json({ success: true, name: user.userName,userId:user._id });
     } catch (error) {
         res.status(500).json({ success: false, message: error.message,errorPoint:"from register controller"});
@@ -83,6 +84,7 @@ const login = async (req, res) => {
             maxAge: 1000 * 60 * 60 * 24 * 30, //!30 days
         });
         //!send response
+        
         res.status(200).json({
             success: true,
             name: user.userName,
