@@ -5,141 +5,141 @@
   <link rel="stylesheet" href="style.css">
   <style>
     /* Basic reset styles */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
 
-/* Header styles */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #f0f0f0; /* Light gray background */
-}
+    /* Header styles */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #f0f0f0; /* Light gray background */
+    }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
 
-.navigation {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+    .navigation {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
 
-.navigation li {
-  display: inline-block;
-  margin-right: 1rem;
-}
+    .navigation li {
+      display: inline-block;
+      margin-right: 1rem;
+    }
 
-.navigation a {
-  text-decoration: none;
-  color: #333; /* Dark gray text */
-}
+    .navigation a {
+      text-decoration: none;
+      color: #333; /* Dark gray text */
+    }
 
-.navigation a:hover {
-  color: #000; /* Black text on hover */
-}
+    .navigation a:hover {
+      color: #000; /* Black text on hover */
+    }
 
-/* Main content styles */
-.main-content {
-  padding: 2rem;
-}
+    /* Main content styles */
+    .main-content {
+      padding: 2rem;
+    }
 
-h2 {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-}
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
 
-p {
-  line-height: 1.5;
-}
+    p {
+      line-height: 1.5;
+    }
 
-/* Product list styles */
-.product-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+    /* Product list styles */
+    .product-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
 
-.product-item {
-  width: calc(33% - 1rem); /* 33% width for each product with some margin */
-  margin-bottom: 1rem;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for each product */
-  border-radius: 5px;
-  padding: 1rem;
-}
+    .product-item {
+      width: calc(33% - 1rem); /* 33% width for each product with some margin */
+      margin-bottom: 1rem;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for each product */
+      border-radius: 5px;
+      padding: 1rem;
+    }
 
-.product-item img {
-  width: 100%;
-  height: 150px; /* Set a fixed height for product images */
-  object-fit: cover; /* Crop images to fit within the container */
-}
+    .product-item img {
+      width: 100%;
+      height: 150px; /* Set a fixed height for product images */
+      object-fit: cover; /* Crop images to fit within the container */
+    }
 
-.product-item h4 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.2rem;
-}
+    .product-item h4 {
+      margin-top: 0.5rem;
+      margin-bottom: 0.2rem;
+    }
 
-.product-item p {
-  margin-bottom: 0.5rem;
-}
+    .product-item p {
+      margin-bottom: 0.5rem;
+    }
 
-.price {
-  font-weight: bold;
-}
+    .price {
+      font-weight: bold;
+    }
 
-/* Footer styles */
-.footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #f0f0f0; /* Light gray background */
-}
+    /* Footer styles */
+    .footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #f0f0f0; /* Light gray background */
+    }
 
-/* Responsive design adjustments (for smaller screens) */
-@media (max-width: 768px) {
-  .product-item {
-    width: calc(50% - 1rem); /* Adjust width for smaller screens */
-  }
-}
+    /* Responsive design adjustments (for smaller screens) */
+    @media (max-width: 768px) {
+      .product-item {
+        width: calc(50% - 1rem); /* Adjust width for smaller screens */
+      }
+    }
 
-@media (max-width: 480px) {
-  .product-item {
-    width: 100%; /* Make products full width on very small screens */
-  }
-  .navigation li {
-    display: block; /* Stack navigation items vertically on very small screens */
-  }
-}
+    @media (max-width: 480px) {
+      .product-item {
+        width: 100%; /* Make products full width on very small screens */
+      }
+      .navigation li {
+        display: block; /* Stack navigation items vertically on very small screens */
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Sweet Treats Bakery</h1>
-    </header>
+  </header>
   <main>
     <h2>Welcome to Sweet Treats!</h2>
     <p>We offer a variety of delicious pastries, cakes, and breads.</p>
     <a href="/products/create">Add a New Product</a>
     <% if (products.length > 0) { %>
       <h3>Our Products</h3>
-      <ul>
+      <ul class="product-list">
         <% products.forEach(function(product) { %>
-          <li>
+          <li class="product-item">
+            <img src="<%= product.image %>" alt="<%= product.name %>">
             <h4><%= product.name %></h4>
             <p><%= product.description %></p>
-            <p>Price: $<%= product.price %></p>
+            <p class="price">Price: $<%= product.price %></p>
           </li>
         <% }) %>
       </ul>
-      
     <% } else { %>
       <p>No products available yet.</p>
     <% } %>
