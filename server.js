@@ -16,6 +16,8 @@ app.set('view engine', 'ejs');
 // Use body-parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Use routes from products.js
 app.use('/products', productRoutes);
 
