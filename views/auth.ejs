@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Joshua products - register</title>
+        <style>
+            .container{
+                display: flex;
+                flex-direction: space-between;
+            }
+            form{
+                display: inline-block;
+            }
+            h1{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Joshua products</h1>
+        </header>
+        <div class="container">
+            <div class="register">
+                <h2>Register</h2>
+                <form action="/auth/register" method="POST">
+                    <label for="userName">userName:</label>
+                    <input type="text" id="userName" name="userName" required />
+                    <br />
+                    <label for="password">Password:</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        required
+                    />
+                    <br />
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required />
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+            <div class="login">
+                <h2>Login</h2>
+                <form action="/auth/login" method="POST">
+                    <label for="email">email:</label>
+                    <input type="text" id="email" name="email" required />
+                    <br />
+                    <label for="password">Password:</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        required
+                    />
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2024 Joshua products</p>
+        </footer>
+    </body>
+</html>

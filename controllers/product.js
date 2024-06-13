@@ -16,6 +16,10 @@ const renderAbout = (req, res) => {
     res.render("about", { imageUrl });
 };
 
+const renderAuth = (req, res) => {
+    res.render("auth");
+};
+
 const getAllProducts_create = async (req, res) => {
     try {
         const products = await Product.find();
@@ -46,4 +50,5 @@ module.exports = {
     getAllProducts_create,
     createProduct,
     renderAbout,
+    renderAuth,
 };
