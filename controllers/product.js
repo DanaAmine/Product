@@ -12,7 +12,8 @@ const getAllProducts_home = async (req, res) => {
 };
 
 const renderAbout = (req, res) => {
-    res.render("about");
+    const imageUrl ="../public/images/sweet-treats.jpg";
+    res.render("about", { imageUrl });
 };
 
 const getAllProducts_create = async (req, res) => {
