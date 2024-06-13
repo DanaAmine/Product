@@ -72,6 +72,18 @@
       .Signup-container {
         height: 700px;
       }
+      .login-card {
+        display: flex;
+        gap: 100px;
+        width: 79.93%;
+        height: 630px;
+        flex-shrink: 0;
+        border-radius: 16px;
+        background: #fff;
+        margin-top: 70px;
+        margin-left: 127px;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2); /* Add this line */
+      }
       .signup-card {
         display: flex;
         gap: 100px;
@@ -263,9 +275,9 @@
       </div>
       <!-- sign up  -->
       <div class="register" id="registerForm" style="display: none">
-        <div class="signup-card">
+        <div class="login-card">
           <div class="column1">
-            <h2 class="title">Login</h2>
+            <h2 class="title">register</h2>
             <form action="/auth/register" method="POST">
               <label for="name">Name:</label>
               <input type="text" id="name" name="name" class="input" required />
@@ -287,7 +299,7 @@
                 class="password input"
                 required
               />
-              <button type="submit" class="submit">Login</button>
+              <button type="submit" class="submit">register</button>
             </form>
             <button
               class="redirect"
