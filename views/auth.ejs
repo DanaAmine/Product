@@ -1,79 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Joshua products - register</title>
-        <style>
-            body{
-                background-color: #f9f9f9;
-            }
-            main {
-                display: flex;
-                justify-content: space-evenly;
-                /* align-items: center; */
-                max-width: 80%;
-                margin:auto;
-            }
-            body {
-                font-family: Arial, sans-serif;
-                line-height: 1.6;
-                margin: 0;
-                padding: 0;
-                background-color: #f9f9f9;
-            }
-            header {
-                background-color: #ffcc80;
-                padding: 10px;
-                text-align: center;
-            }
-            header h1 {
-                margin: 0;
-                font-size: 2.5em;
-            }
-            form {
-                display: flex;
-                flex-direction: column;
-            }
-            .line {
-                background-color: #2f2f2f;
-                width: 3px;
-                height: 281px;
-                margin-top: 105px;
-            }
-            input {
-                height: 30px;
-                width: 200px;
-                border-radius: 8px;
-                border-color: #f9f9f9;
-            }
-            input:focus{
-                outline: none;
-            }
-            .botona {
-                margin-top: 70px;
-            }
-            button {
-                height: 30px;
-            }
-            div h2 {
-                text-align: center;
-            }
-            .login,
-            .register {
-                background-color: white;
-                padding: 30px;
-                border-radius: 25px;
-                margin-top: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <h1>Joshua products</h1>
-        </header>
-        <main>
-            <div class="register">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joshua products - register</title>
+    <style>
+      input:focus {
+        outline: none;
+      }
+      label {
+        margin-top: 30px;
+      }
+      .Signup-container {
+        height: 700px;
+      }
+      .login-card {
+        display: flex;
+        gap: 100px;
+        width: 79.93%;
+        height: 630px;
+        flex-shrink: 0;
+        border-radius: 16px;
+        background: #fff;
+        margin-top: 70px;
+        margin-left: 127px;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2); /* Add this line */
+      }
+      .signup-card {
+        display: flex;
+        gap: 100px;
+        width: 85%;
+        height: 530px;
+
+        flex-shrink: 0;
+        border-radius: 16px;
+        background: #fff;
+        margin-top: 70px;
+        margin-left: 127px;
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2); /* Add this line */
+      }
+      .column1 {
+        padding-left: 72px;
+        padding-top: 40px;
+        display: block;
+      }
+      .column1 form {
+        display: block;
+      }
+      .redirect {
+        display: block;
+        width: fit-content;
+        margin: auto;
+        background: none;
+        border: none;
+        color: #000;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      h2 {
+        color: #ff9800;
+
+        /* h2 */
+        font-family: "Century Gothic";
+        font-size: 37px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+      button {
+        height: 30px;
+        border-radius: 15px; /* Add this line */
+      }
+      .main-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .input {
+        display: block;
+        width: 100%;
+        height: 48px;
+        flex-shrink: 0;
+        border: none;
+        margin-top: 20px;
+        border-bottom: 3px solid var(--secondary, #000);
+        background-color: #fff;
+        color: #525252;
+        /* h3 */
+        font-family: Century Gothic;
+        font-size: 17px;
+        margin-bottom: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        padding-left: 4px;
+      }
+
+      h3 {
+        color: #fff;
+        font-family: "Century Gothic";
+        font-size: 21px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 70px;
+      }
+      .Link {
+        color: var(--primary, #ff9800);
+      }
+      @media screen and (max-width: 768px) {
+        /* Adjust the breakpoint as needed */
+        .column2 {
+          display: none;
+        }
+      }
+
+      .submit {
+        width: 376px;
+        height: 54px;
+        flex-shrink: 0;
+        background: #ff9800;
+        margin-top: 20px;
+        border: none;
+      }
+
+      .column2 {
+        background-image: url(../../assets/signup.png);
+        width: 46.71%;
+        height: 528.94px;
+        flex-shrink: 0;
+        border-radius: 0px 16px 16px 0px;
+      }
+
+      .quote {
+        transform: translateY(120px) translateX(50px);
+        width: 446.202px;
+        height: 47.7px;
+        flex-shrink: 0;
+        color: #000;
+
+        /* h2 */
+        font-family: "Century Gothic";
+        font-size: 37px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Joshua products</h1>
+    </header>
+    <main>
+      <!-- <div class="register">
                 <h2>Register</h2>
                 <form action="/auth/register" method="POST">
                     <label for="userName">userName:</label>
@@ -109,9 +189,93 @@
                     <button type="submit" class="botona">Login</button>
                 </form>
             </div>
-        </main>
-        <footer>
-            <p>&copy; 2024 Joshua products</p>
-        </footer>
-    </body>
+        </main> -->
+      <div class="main-div">
+        <div class="login Signup-container" id="loginForm">
+          <div class="signup-card">
+            <div class="column1">
+              <h2 class="title">Login</h2>
+              <form action="/auth/login" method="POST">
+                <label for="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="email input"
+                  required
+                />
+                <br />
+                <label for="password">Password:</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="password input"
+                  required
+                />
+                <button type="submit" class="submit">Login</button>
+              </form>
+              <button
+                class="redirect"
+                onclick="document.getElementById('loginForm').style.display='none'; document.getElementById('registerForm').style.display='block';"
+              >
+                have an acount , sign up
+              </button>
+            </div>
+            <div class="column2">
+              <h3 class="quote">joshua products</h3>
+            </div>
+          </div>
+        </div>
+        <!-- sign up  -->
+        <div class="register" id="registerForm" style="display: none">
+          <div class="login-card">
+            <div class="column1">
+              <h2 class="title">register</h2>
+              <form action="/auth/register" method="POST">
+                <label for="name">Name:</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="userName"
+                  class="input"
+                  required
+                />
+                <label for="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="email input"
+                  required
+                />
+                <br />
+                <label for="password">Password:</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="password input"
+                  required
+                />
+                <button type="submit" class="submit">register</button>
+              </form>
+              <button
+                class="redirect"
+                onclick="document.getElementById('registerForm').style.display='none'; document.getElementById('loginForm').style.display='block';"
+              >
+                dont have an acount sign up
+              </button>
+            </div>
+            <div class="column2">
+              <h3 class="quote">joshua products</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2024 Joshua products</p>
+    </footer>
+  </body>
 </html>

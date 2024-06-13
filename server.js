@@ -26,7 +26,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/auth',register_login_router);
 app.use(refreshToken);
-app.use(auth);
 // Use routes from products.js
 app.use('/products', productRoutes);
 

@@ -1,4 +1,6 @@
 const express = require("express");
+const auth = require('../middleware/authentication');
+
 const {
     getAllProducts_home,
     getAllProducts_create,
@@ -13,11 +15,11 @@ const router = express.Router();
 router.route("/").get(getAllProducts_home);
 
 //! router.get("/create", getAllProducts_create);
-router.route("/create").get(getAllProducts_create);
+router.route("/create",).get(auth,getAllProducts_create);
 
 // Create a new product (for create-product page)
 //! router.post("/create", createProduct);
-router.route("/create").post(createProduct);
+router.route("/create").post(auth,createProduct);
 
 //! router.get("/about", renderAbout);
 router.route("/about").get(renderAbout);

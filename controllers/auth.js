@@ -27,11 +27,12 @@ const register = async (req, res) => {
             httpOnly: true,
             maxAge: 1000 * 60 * 60 * 24 * 30, //!30 days
         });
-        //!send response
+        //!send response  
 
-        res.status(201).json({ success: true, name: user.userName,userId:user._id });
+        res.status(201).redirect("/auth");
     } catch (error) {
-        res.status(500).json({ success: false, message: error.message,errorPoint:"from register controller"});
+        // pass should > 6
+        res.status(500).redirect("/auth");
     }
 };
 /*
@@ -61,7 +62,7 @@ const login = async (req, res) => {
         if (!user.validePassword(password)) {
             return res
                 .status(400)
-                .json({ success: false, message: "invalid password" });
+                .redirect("/auth");
         }
         //!create access token
         const accessToken = user.createAccessToken();
@@ -85,11 +86,7 @@ const login = async (req, res) => {
         });
         //!send response
         
-        res.status(200).json({
-            success: true,
-            name: user.userName,
-            userId: user._id,
-        });
+        res.status(200).redirect("/products");
     } catch (error) {
         res.status(500).json({ success: false, message: error.message,errorPoint:"from login controller" });
     }
