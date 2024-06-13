@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sweet Treats Bakery</title>
   <style>
-<<<<<<< HEAD
     /* Basic reset styles */
     body {
       margin: 0;
@@ -68,20 +67,30 @@
       list-style: none;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
     }
 
     .product-item {
-      width: calc(33% - 1rem); /* 33% width for each product with some margin */
+      width: calc(30% - 1rem); /* 33% width for each product with some margin */
       margin-bottom: 1rem;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for each product */
       border-radius: 5px;
       padding: 1rem;
+      border: 1px solid #ccc;
+      padding: 10px;
+      box-sizing: border-box;
+      shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      min-height: 584px;
+      min-width: 333px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .product-item img {
       width: 100%;
-      height: 150px; /* Set a fixed height for product images */
+      height: 300px; /* Set a fixed height for product images */
       object-fit: cover; /* Crop images to fit within the container */
     }
 
@@ -118,7 +127,6 @@
       }
       .navigation li {
         display: block; /* Stack navigation items vertically on very small screens */
-=======
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
@@ -200,25 +208,30 @@
       }
       main a {
         padding: 8px 12px;
->>>>>>> 6902f6547d5f7877250f4d31622b0c2470cd76c9
       }
     }
   </style>
 </head>
 <body>
-  <header>
+  <header style="text-align:center;">
     <h1>Sweet Treats Bakery</h1>
   </header>
   <main>
+      <div style="text-align: center;">
     <h2>Welcome to Sweet Treats!</h2>
     <p>We offer a variety of delicious pastries, cakes, and breads.</p>
-    <a href="/products/create">Add a New Product</a>
+
+    <a href="/products/create" style="background-color: #ff9800; color: #ffffff; padding: 10px 15px; border-radius: 5px; text-decoration: none;">
+      Add a New Produc:
+  </a>
+
+</div>
     <% if (products.length > 0) { %>
-      <h3>Our Products</h3>
+      <h3 style="margin-left : 1rem;">Our Products</h3>
       <ul class="product-list">
         <% products.forEach(function(product) { %>
           <li class="product-item">
-            <img src="<%= product.image %>" alt="<%= product.name %>">
+            <img src="<%= product.image %>" alt="<%= product.name %>" style="" >
             <h4><%= product.name %></h4>
             <p><%= product.description %></p>
             <p class="price">Price: $<%= product.price %></p>
@@ -229,7 +242,8 @@
       <p>No products available yet.</p>
     <% } %>
   </main>
-  <footer>
+  <footer style="text-align:center;">
+      <hr />
     <p>&copy; 2024 Sweet Treats Bakery</p>
   </footer>
 </body>
