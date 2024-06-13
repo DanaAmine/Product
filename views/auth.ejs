@@ -5,14 +5,37 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Joshua products - register</title>
         <style>
-            .container{
+            main {
                 display: flex;
-                flex-direction: space-between;
+                justify-content: space-evenly;
+                /* align-items: center; */
             }
-            form{
-                display: inline-block;
+            form {
+                display: flex;
+                flex-direction: column;
             }
-            h1{
+            h1 {
+                text-align: center;
+                background-color: orange;
+                padding: 20px;
+            }
+            .line {
+                background-color: #2f2f2f;
+                width: 3px;
+                height: 281px;
+                margin-top: 45px;
+            }
+            input {
+                height: 30px;
+                width: 200px;
+            }
+            .botona {
+                margin-top: 70px;
+            }
+            button {
+                height: 30px;
+            }
+            div h2 {
                 text-align: center;
             }
         </style>
@@ -21,7 +44,7 @@
         <header>
             <h1>Joshua products</h1>
         </header>
-        <div class="container">
+        <main>
             <div class="register">
                 <h2>Register</h2>
                 <form action="/auth/register" method="POST">
@@ -41,6 +64,7 @@
                     <button type="submit">Register</button>
                 </form>
             </div>
+            <div class="line"></div>
             <div class="login">
                 <h2>Login</h2>
                 <form action="/auth/login" method="POST">
@@ -54,10 +78,10 @@
                         name="password"
                         required
                     />
-                    <button type="submit">Login</button>
+                    <button type="submit" class="botona">Login</button>
                 </form>
             </div>
-        </div>
+        </main>
         <footer>
             <p>&copy; 2024 Joshua products</p>
         </footer>
