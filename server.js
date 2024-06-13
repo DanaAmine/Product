@@ -2,15 +2,12 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const connectDB = require('./db/connect');
+require('dotenv').config();
 
 const productRoutes = require('./routes/products');
 
 const app = express();
-
-// Connect to MongoDB database (replace with your connection string)
-mongoose.connect('mongodb+srv://amineDana:amineDana@nodeexpressprojects.f6bx8nu.mongodb.net/?retryWrites=true&w=majority&appName=nodeExpressProjects')
-  .then(() => console.log('Connected to MongoDB'))
-  .catch(err => console.error('Error connecting to MongoDB', err));
 
 // Set template engine to EJS
 app.set('views', path.join(__dirname, 'views'));
@@ -28,4 +25,8 @@ app.get('*', (req, res) => {
 });
 
 // Start the server
-app.listen(3000, () => console.log('Server listening on port 3000'));
+const main = async () => {
+  app.listen(3000, () => console.log('Server listening on port 3000'));
+  await connectDB(process.env.MONGO_URL);
+};
+main();
