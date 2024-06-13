@@ -26,7 +26,7 @@ app.get('*', (req, res) => {
 
 // Start the server
 const main = async () => {
-  app.listen(3000, () => console.log('Server listening on port 3000'));
+  app.listen(3001, () => console.log('Server listening on port 3000'));
   await connectDB(process.env.MONGO_URL);
 };
 main();

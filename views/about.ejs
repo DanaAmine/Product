@@ -1,17 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sweet Treats Bakery - About Us</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: #ffcc80;
+      padding: 10px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+    main h2 {
+      font-size: 2em;
+      margin-top: 0;
+    }
+    main p {
+      font-size: 1.2em;
+    }
+    main img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #ffcc80;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>Sweet Treats Bakery</h1>
-    </header>
+  </header>
   <main>
     <h2>About Sweet Treats</h2>
-    <p>%(Describe your bakery here)  </p>
-    <img src="<%- imageURL %>  " alt="Sweet Treats Bakery">
+    <p>%(Describe your bakery here)</p>
+    <img src="<%- imageURL %>" alt="Sweet Treats Bakery">
   </main>
   <footer>
     <p>&copy; 2024 Sweet Treats Bakery</p>

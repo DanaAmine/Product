@@ -1,14 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sweet Treats Bakery - Create Product</title>
-  <link rel="stylesheet" href="style.css">
-  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: #ffcc80;
+      padding: 10px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+    main h2 {
+      font-size: 2em;
+      margin-top: 0;
+    }
+    main form {
+      margin-top: 20px;
+    }
+    main form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    main form input,
+    main form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    main form button {
+      padding: 10px 20px;
+      background-color: #ff9800;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    main form button:hover {
+      background-color: #f57c00;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #ffcc80;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>Sweet Treats Bakery</h1>
-    </header>
+  </header>
   <main>
     <h2>Create a New Product</h2>
     <form action="/products/create" method="POST">
