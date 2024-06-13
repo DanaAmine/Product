@@ -19,14 +19,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Use routes from products.js
 app.use('/products', productRoutes);
 
-// Handle any other routes (optional - you can add custom error pages here)
-app.get('*', (req, res) => {
-  res.status(404).send('Page not found');
+app.use('*', (req, res, next) => {
+    res.status(404).render('notFound');
 });
 
 // Start the server
 const main = async () => {
-  app.listen(3000, () => console.log('Server listening on port 3000'));
+  app.listen(3001, () => console.log('Server listening on port 3000'));
   await connectDB(process.env.MONGO_URL);
 };
 main();
