@@ -12,7 +12,7 @@ const UserSchema = new mongoose.Schema(
     },
     email: {
       type: String,
-      required: [true, "Please add a email"],
+      required: [true, "Please add an email"],
       match: [
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
         "pleas provide a valide email",
@@ -48,8 +48,8 @@ UserSchema.methods.createAccessToken = function () {
     { expiresIn: "10s" }
   );
 };
-UserSchema.methods.validePassword=function (notHashedPassword){
-  return bcrypt.compareSync(notHashedPassword,this.password);
-}
+UserSchema.methods.validePassword = function (notHashedPassword) {
+  return bcrypt.compareSync(notHashedPassword, this.password);
+};
 
 module.exports = mongoose.model("User", UserSchema);
