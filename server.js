@@ -7,7 +7,7 @@ require('dotenv').config();
 const cookieParcer = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const register_login_router = require('./routes/auth');
-const auth = require('./middleware/authentication');
+// const auth = require('./middleware/authentication');
 const refreshToken=require('./middleware/refreshToken');
 
 const productRoutes = require('./routes/products');
@@ -25,7 +25,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/auth',register_login_router);
-app.use(refreshToken);
+//app.use(refreshToken);
 // Use routes from products.js
 app.use('/products', productRoutes);
 
